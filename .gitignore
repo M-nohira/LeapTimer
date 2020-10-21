@@ -14,7 +14,6 @@
 *.userprefs
 
 # Redistribution prohibited Font
-*.ttf
 
 # Build results
 [Dd]ebug/
