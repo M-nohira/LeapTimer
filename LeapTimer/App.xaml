@@ -1,0 +1,9 @@
+﻿<prism:PrismApplication x:Class="LeapTimer.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:LeapTimer"
+             xmlns:prism="http://prismlibrary.com/" >
+    <Application.Resources>
+        <FontFamily x:Key="timeleap">./Font/timeleap100.tts#timeleap100</FontFamily>
+    </Application.Resources>
+</prism:PrismApplication>
