@@ -18,5 +18,5 @@ Prism Unity
 
 | 対象 | ライセンス | 著作者 | 引用元 | <br>
 |:----:|:----:|:----:|:----:|:----:|
-| /LeapTimer/Font/timeleap100.ttf | CC BY 2.1 JP | きろのの | https://ola.kironono.com/entry/fonts-timeleap |
-|その他 |  MIT | N_Magi | here |
+| /LeapTimer/Font/timeleap100.ttf | [![licensebuttons by](https://licensebuttons.net/l/by/3.0/88x31.png)](https://creativecommons.org/licenses/by/4.0)| きろのの | https://ola.kironono.com/entry/fonts-timeleap |
+|その他 |  [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/) | N_Magi | here |
