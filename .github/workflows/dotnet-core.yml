@@ -24,7 +24,7 @@ jobs:
     - name: Test
       run: dotnet test --no-restore --verbosity normal
     - name: Artifacts Zipping...
-      run: tar.exe -c -f LeapTimer.zip D:\a\LeapTimer\LeapTimer\LeapTimer\bin\Release\netcoreapp3.0\
+      run: tar.exe -c -f LeapTimer.zip "D:\a\LeapTimer\LeapTimer\LeapTimer\bin\Release\netcoreapp3.0"
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1.1.4
