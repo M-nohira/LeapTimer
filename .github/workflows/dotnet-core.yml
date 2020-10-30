@@ -8,9 +8,7 @@ on:
 
 jobs:
   build:
-
     runs-on: windows-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET Core
@@ -24,8 +22,7 @@ jobs:
     - name: Test
       run: dotnet test --no-restore --verbosity normal
     - name: Artifacts Zipping...
-      run: tar.exe -c -f LeapTimer.zip "D:\a\LeapTimer\LeapTimer\LeapTimer\bin\Release\netcoreapp3.0"
-      working-directory: "D:\a\artifacts"
+      run: tar.exe -c -f "D:\a\LeapTimer.zip" "D:\a\LeapTimer\LeapTimer\LeapTimer\bin\Release\netcoreapp3.0"
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1.1.4
@@ -43,7 +40,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
-        asset_path: "D:\a\artifacts"
-        asset_name: "LeapTimer.zip"
+        asset_path: D:\a\
+        asset_name: LeapTimer.zip
         asset_content_type: application/zip
     
