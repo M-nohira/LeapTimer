@@ -28,12 +28,18 @@ jobs:
       with:
         name: LeapTimer-Artifact
         path: D:\a\LeapTimer\LeapTimer\LeapTimer\bin\Release\netcoreapp3.0\
+    - name: Actions Tagger
+      uses: Actions-R-Us/actions-tagger@v2.0.1
+      with:
+        # Whether or not to also publish a `latest` tag
+        publish_latest_tag: true
     - name: Create Release
       id: create_release
-      uses: actions/create-release@v1
+      uses: actions/create-release@v1.1.4
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
+        tag_name: ${{ latest }}
         release_name: ReleaseBuild_${{ github.sha }}
         draft: false
         prerelease: false
