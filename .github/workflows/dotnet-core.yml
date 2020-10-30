@@ -23,16 +23,10 @@ jobs:
       run: dotnet build --configuration Release --no-restore
     - name: Test
       run: dotnet test --no-restore --verbosity normal
-    - name: Upload-artifact
-      uses: actions/upload-artifact@v2
+    - name: Create Zip File
+      uses: montudor/action-zip@v0.1.0
       with:
-        name: LeapTimer-Artifact
-        path: D:\a\LeapTimer\LeapTimer\LeapTimer\bin\Release\netcoreapp3.0\
-    - name: Actions Tagger
-      uses: Actions-R-Us/actions-tagger@v2.0.1
-      with:
-        # Whether or not to also publish a `latest` tag
-        publish_latest_tag: true
+        args: zip -qq -r "./Leap_timer.zip" "D:\a\LeapTimer\LeapTimer\LeapTimer\bin\Release\netcoreapp3.0\"
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1.1.4
@@ -50,7 +44,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
-        asset_path: ./LeapTimer-Artifact.zip
-        asset_name: LeapTimer-Artifact.zip
+        asset_path: ./Leap_timer.zip
+        asset_name: Leap_timer.zip
         asset_content_type: application/zip
     
