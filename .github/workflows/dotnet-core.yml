@@ -23,6 +23,11 @@ jobs:
       run: dotnet build --configuration Release --no-restore
     - name: Test
       run: dotnet test --no-restore --verbosity normal
+    - name: Upload-artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: LeapTimer-Artifact
+        path: D:\a\LeapTimer\LeapTimer\LeapTimer\bin\Release\netcoreapp3.0\
     - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -43,8 +48,4 @@ jobs:
           asset_path: ./LeapTimer-Artifact.zip
           asset_name: LeapTimer-Artifact.zip
           asset_content_type: application/zip
-    - name: Upload-artifact
-      uses: actions/upload-artifact@v2
-      with:
-        name: LeapTimer-Artifact
-        path: D:\a\LeapTimer\LeapTimer\LeapTimer\bin\Release\netcoreapp3.0\
+    
